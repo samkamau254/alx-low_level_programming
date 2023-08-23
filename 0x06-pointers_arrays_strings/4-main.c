@@ -10,7 +10,7 @@
 void print_array(int *a, int n)
 {
 	int i;
-	
+
 	i = 0;
 	while (i < n)
 	{
@@ -25,10 +25,8 @@ void print_array(int *a, int n)
 }
 /**
  * main - check the code
- * @a: an array of integers
- * @n: the number of elements to swap
  *
- * Return: nothing.
+ * Return: Always 0.
  */
 
 int main(void)
