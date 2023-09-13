@@ -1,8 +1,8 @@
 #ifndef FUNCTION_POINTERS_H
 #define FUNCTION_POINTERS_H
 
-#include <stddef.h>   /* Include standard library for size_t */
-#include <stdlib.h>   /* Include standard library for memory allocation */
+#include <stddef.h>
+#include <stdlib.h>
 
 /* Function that prints a name using a specified printing function */
 void print_name(char *name, void (*f)(char *));
