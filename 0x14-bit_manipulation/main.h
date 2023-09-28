@@ -21,5 +21,6 @@ int _atoi(const char *s);
 int custom_putchar(char character);
 int get_endianness(void);
 
-#endif /* MAIN_H */
+#endif
+
 

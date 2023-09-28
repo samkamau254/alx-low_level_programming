@@ -1,13 +1,5 @@
 #include "main.h"
-
-/**
- * custom_putchar - writes the character c to stdout
- * @character: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int custom_putchar(char character);
+#include <limits.h>
 
 /**
  * print_binary - Print the binary representation of an unsigned long int
@@ -15,7 +7,7 @@ int custom_putchar(char character);
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int mask = 1UL << (sizeof(unsigned long int) * 8 - 1);
+	unsigned long int mask = 1UL << (CHAR_BIT * sizeof(unsigned long int) - 1);
 	int flag = 0;
 
 	if (n == 0)
