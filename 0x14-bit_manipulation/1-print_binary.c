@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * print_binary - Prints the binary representation of a decimal number.
- * @n: The number to print in binary.
+ * print_binary - Print the binary representation of an unsigned long int
+ * @n: The unsigned long integer to print in binary
  */
 void print_binary(unsigned long int n)
 {
-	int shift = sizeof(unsigned long int) * 8 - 1;
-	int printing = 0;
+	int shift_flag = 0; /* Flag to track non-zero bits */
+	unsigned long int mask;
 
 	if (n == 0)
 	{
@@ -15,17 +15,23 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	while (shift >= 0)
+	/* Loop through each bit position, from left to right */
+	for (mask = 1UL << 63; mask > 0; mask >>= 1)
 	{
-		if ((n >> shift) & 1)
+		/* Check if the current bit is set (non-zero) */
+		if (n & mask)
 		{
 			custom_putchar('1');
-			printing = 1;
+			shift_flag = 1;
 		}
-		else if (printing)
+		else if (shift_flag) /* Print leading zeros after the first 1 */
 		{
 			custom_putchar('0');
 		}
-		shift--;
 	}
+
+	/* If n is all zeros, print a single '0' */
+	if (!shift_flag)
+		custom_putchar('0');
 }
+
