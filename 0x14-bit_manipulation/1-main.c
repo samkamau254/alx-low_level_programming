@@ -4,8 +4,6 @@
 /**
  * main - Entry point
  *
- * Description: A program to test the print_binary function.
- *
  * Return: Always 0.
  */
 int main(void)
