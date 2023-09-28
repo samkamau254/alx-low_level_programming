@@ -1,30 +1,32 @@
 #include "main.h"
-#include <limits.h>
 
 /**
- * print_binary_recursive - Print the binary representation
- * @n: The unsigned long int to print in binary
- */
-void print_binary_recursive(unsigned long int n)
-{
-	if (n > 1)
-		print_binary_recursive(n >> 1);
-
-	custom_putchar((n & 1) + '0');
-}
-
-/**
- * print_binary - Print the binary representation of an unsigned long int
- * @n: The unsigned long int to print in binary
+ * print_binary - Prints the binary representation of a decimal number.
+ * @n: The number to print in binary.
  */
 void print_binary(unsigned long int n)
 {
+	int shift = sizeof(unsigned long int) * 8 - 1;
+	int printing = 0;
+
 	if (n == 0)
 	{
 		custom_putchar('0');
 		return;
 	}
 
-	print_binary_recursive(n);
+	while (shift >= 0)
+	{
+		if ((n >> shift) & 1)
+		{
+			custom_putchar('1');
+			printing = 1;
+		}
+		else if (printing)
+		{
+			custom_putchar('0');
+		}
+		shift--;
+	}
 }
 
