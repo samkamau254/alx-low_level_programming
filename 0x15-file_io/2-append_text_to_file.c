@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * append_file - Appends text at the end of a file.
+ * append_text_to_file - Appends text at the end of a file.
  * @filename: The name of the file.
  * @text_content: The text content to append to the file.
  *
