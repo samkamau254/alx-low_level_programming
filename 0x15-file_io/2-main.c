@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * main - Entry point
+ * main - Entry point for the program
  * @ac: The number of command-line arguments
  * @av: An array of command-line argument strings
  *
@@ -19,7 +19,7 @@ int main(int ac, char **av)
 		exit(1);
 	}
 	res = append_file(av[1], av[2]);
-	printf("-> %i\n", res);
+	printf("-> %i)\n", res);
 	return (0);
 }
 
