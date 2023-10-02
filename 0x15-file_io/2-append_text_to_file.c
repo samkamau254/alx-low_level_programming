@@ -9,7 +9,7 @@
  *
  * Return: 1 on success, -1 on failure.
  */
-int append_file(const char *filename, const char *text_content)
+int append_text_to_file(const char *filename, const char *text_content)
 {
 	int fd, res, len = 0;
 
